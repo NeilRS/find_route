@@ -15,6 +15,10 @@ public class Graph {
         this.addCity(cityName);
     }
 
+    public Graph() {
+        this.cities = new ArrayList<>();
+    }
+
     public void addCity(String cityName) {
         cities.add(new City(cityName));
     }
@@ -26,6 +30,10 @@ public class Graph {
             }
         }
         return null;
+    }
+
+    public int sizeOf() {
+        return this.cities.size();
     }
 
 }

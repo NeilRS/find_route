@@ -23,6 +23,15 @@ public class City {
         this.connectingCities.add(new ConnectingCity(city, distance));
     }
 
+    public int connectingDistance(City connectingCity) {
+        for(ConnectingCity city:connectingCities) {
+            if(city.getCity().name.equals(connectingCity.name)) {
+                return city.getDistance();
+            }
+        }
+        return -1;
+    }
+
     public boolean visited() {
         return visitedflag;
     }
