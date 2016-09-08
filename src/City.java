@@ -4,19 +4,20 @@ import java.util.ArrayList;
  * Created by Neil on 9/5/2016.
  */
 public class City {
+    public enum State {
+        UNVISITED, QUEUED, VISITED
+    }
+
+
     public String name;
-    private ArrayList<ConnectingCity> connectingCities = new ArrayList<>();
-    private boolean visitedflag = false;
+    public ArrayList<ConnectingCity> connectingCities = new ArrayList<>();
+    private State state = State.UNVISITED;
+    private int pathCost = 0;
+    private City parent = null;
 
     public City(String name) {
         this.name = name;
         this.connectingCities = new ArrayList<>();
-    }
-
-    public City(String name, City connectingCity, int connectingCityDistance) {
-        this.name = name;
-        this.connectingCities = new ArrayList<>();
-        this.addConnectingCity(connectingCity, connectingCityDistance);
     }
 
     public void addConnectingCity(City city, int distance) {
@@ -32,14 +33,30 @@ public class City {
         return -1;
     }
 
-    public boolean visited() {
-        return visitedflag;
+    public State getState() {
+        return this.state;
     }
 
-    public void setVisitedTrue() {
-        this.visitedflag = true;
+    public void setState(State newState) {
+        this.state = newState;
     }
 
+
+    public int getPathCost() {
+        return pathCost;
+    }
+
+    public void setPathCost(int pathCost) {
+        this.pathCost = pathCost;
+    }
+
+    public City getParent() {
+        return parent;
+    }
+
+    public void setParent(City parent) {
+        this.parent = parent;
+    }
 
 
 }

@@ -5,10 +5,12 @@ public class SearchResults {
     private int distance = -1;
     private City[] route;
 
+    // Rout length is the maximum size of the possible route.
     public SearchResults(int routeLength) {
         this.route = new City[routeLength];
     }
 
+    // Adds a city to the possible route
     public void addCity(City city, int distance) {
         if(this.distance == -1) {
             this.distance = distance;
@@ -23,6 +25,13 @@ public class SearchResults {
                 i = route.length;
             }
         }
+    }
+
+    public void removeCity() {
+        int i;
+        for(i = 0;route[i] != null;i++);
+        this.distance = this.distance - route[i].connectingDistance(route[i-1]);
+        route[i] = null;
     }
 
     public void printRoute() {

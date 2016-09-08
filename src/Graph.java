@@ -6,21 +6,15 @@ import java.util.ArrayList;
 public class Graph {
     private ArrayList<City> cities = new ArrayList<>();
 
-    public Graph(ArrayList<City> cities) {
-        this.cities = cities;
-    }
-
-    public Graph(String cityName) {
-        this.cities = new ArrayList<>();
-        this.addCity(cityName);
-    }
-
     public Graph() {
         this.cities = new ArrayList<>();
     }
 
-    public void addCity(String cityName) {
+    public City addCity(String cityName) {
+
         cities.add(new City(cityName));
+
+        return getCity(cityName);
     }
 
     public City getCity(String name) {

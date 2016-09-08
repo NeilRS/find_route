@@ -14,16 +14,8 @@ public class ConnectingCity {
         return city;
     }
 
-    public void setCity(City city) {
-        this.city = city;
-    }
-
     public int getDistance() {
         return distance;
-    }
-
-    public void setDistance(int distance) {
-        this.distance = distance;
     }
 
     @Override
