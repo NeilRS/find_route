@@ -1,5 +1,7 @@
 /**
  * Created by Neil on 9/5/2016.
+ * last updated 9/9/2016
+ * list of cities that are connected to another city and their distances.
  */
 public class ConnectingCity {
     private City city;
